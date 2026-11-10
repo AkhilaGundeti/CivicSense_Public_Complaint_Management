@@ -1,0 +1,218 @@
+// App.js - Updated with AOS initialization
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { CommunityProvider } from "./context/CommunityContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import DashboardLayout from "./layouts/DashboardLayout";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Toast from "./components/Toast";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Public Pages
+import LandingPage from "./pages/LandingPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+
+// Community Pages
+import CommunityListPage from "./pages/community/CommunityListPage";
+import CommunityFeedPage from "./pages/community/CommunityFeedPage";
+
+// Citizen Pages
+import CitizenLogin from "./pages/citizen/CitizenLogin";
+import CitizenRegister from "./pages/citizen/CitizenRegister";
+import CitizenDashboard from "./pages/citizen/CitizenDashboard";
+
+// Complaint Pages
+import ComplaintSubmit from "./pages/ComplaintSubmit";
+import ComplaintConfirmation from "./pages/ComplaintConfirmation";
+
+// Authority Pages
+import AuthorityLogin from "./pages/authority/AuthorityLogin";
+import AuthorityDashboard from "./pages/authority/AuthorityDashboard";
+import AuthorityComplaints from "./pages/authority/AuthorityComplaints";
+import ComplaintDetail from "./pages/authority/ComplaintDetail";
+
+// Admin Pages
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminAllComplaints from "./pages/admin/AdminAllComplaints";
+import AdminManageAuthorities from "./pages/admin/AdminManageAuthorities";
+import AdminUploadCSV from "./pages/admin/AdminUploadCSV";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
+import AdminCommunityDashboard from "./pages/admin/AdminCommunityDashboard";
+import AdminCommunityManagement from "./pages/admin/AdminCommunityManagement";
+import AdminCommunityAnalytics from "./pages/admin/AdminCommunityAnalytics";
+
+// Citizen Pages
+import CitizenComplaintDetail from "./pages/citizen/CitizenComplaintDetail";
+
+// Layout wrapper component to conditionally show Navbar/Footer
+function AppLayout({ children }) {
+  const location = useLocation();
+
+  // Hide navbar and footer for dashboard routes
+  const isDashboardRoute =
+    location.pathname.startsWith("/admin/") ||
+    location.pathname.startsWith("/authority/");
+
+  return (
+    <>
+      {!isDashboardRoute && <Navbar />}
+      <main className="flex-grow">{children}</main>
+      {!isDashboardRoute && <Footer />}
+      <Toast />
+    </>
+  );
+}
+
+function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
+
+  return (
+    <AuthProvider>
+      <CommunityProvider>
+        <Router
+          future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+        >
+          <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+            <AppLayout>
+              <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+
+                {/* Community Routes */}
+                <Route path="/communities" element={<CommunityListPage />} />
+                <Route
+                  path="/community/:id/feed"
+                  element={<CommunityFeedPage />}
+                />
+
+                {/* Citizen Routes */}
+                <Route path="/citizen/login" element={<CitizenLogin />} />
+                <Route path="/citizen/register" element={<CitizenRegister />} />
+                <Route
+                  path="/citizen/dashboard"
+                  element={
+                    <ProtectedRoute allowedRoles={["citizen"]}>
+                      <CitizenDashboard />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/citizen/complaints/:id"
+                  element={
+                    <ProtectedRoute allowedRoles={["citizen"]}>
+                      <CitizenComplaintDetail />
+                    </ProtectedRoute>
+                  }
+                />
+
+                {/* Complaint Routes */}
+                <Route path="/complaint/submit" element={<ComplaintSubmit />} />
+                <Route
+                  path="/complaint/confirmation"
+                  element={<ComplaintConfirmation />}
+                />
+
+                {/* Authority Routes */}
+                <Route path="/authority/login" element={<AuthorityLogin />} />
+                <Route
+                  path="/authority/*"
+                  element={
+                    <ProtectedRoute allowedRoles={["authority"]}>
+                      <DashboardLayout>
+                        <Routes>
+                          <Route
+                            path="dashboard"
+                            element={<AuthorityDashboard />}
+                          />
+                          <Route
+                            path="complaints"
+                            element={<AuthorityComplaints />}
+                          />
+                          <Route
+                            path="complaints/:id"
+                            element={<ComplaintDetail />}
+                          />
+                        </Routes>
+                      </DashboardLayout>
+                    </ProtectedRoute>
+                  }
+                />
+
+                {/* Admin Routes */}
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route
+                  path="/admin/*"
+                  element={
+                    <ProtectedRoute allowedRoles={["admin"]}>
+                      <DashboardLayout>
+                        <Routes>
+                          <Route
+                            path="dashboard"
+                            element={<AdminDashboard />}
+                          />
+                          <Route
+                            path="complaints"
+                            element={<AdminAllComplaints />}
+                          />
+                          <Route
+                            path="authorities"
+                            element={<AdminManageAuthorities />}
+                          />
+                          <Route
+                            path="upload-csv"
+                            element={<AdminUploadCSV />}
+                          />
+                          <Route
+                            path="analytics"
+                            element={<AdminAnalytics />}
+                          />
+                          <Route
+                            path="communities"
+                            element={<AdminCommunityDashboard />}
+                          />
+                          <Route
+                            path="communities/:id/manage"
+                            element={<AdminCommunityManagement />}
+                          />
+                          <Route
+                            path="communities/:id/analytics"
+                            element={<AdminCommunityAnalytics />}
+                          />
+                        </Routes>
+                      </DashboardLayout>
+                    </ProtectedRoute>
+                  }
+                />
+
+                {/* Fallback */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </AppLayout>
+          </div>
+        </Router>
+      </CommunityProvider>
+    </AuthProvider>
+  );
+}
+
+export default App;
