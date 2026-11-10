@@ -18,7 +18,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="mb-6 text-sm leading-relaxed text-orange-100">
-              AI-Powered Public Complaint Management Platform. 
+              Public Complaint Management Platform. 
               Making communities smarter, safer, and more responsive through technology.
             </p>
             <div className="flex space-x-4">

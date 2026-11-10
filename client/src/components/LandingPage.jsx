@@ -27,7 +27,7 @@ const LandingPage = () => {
   const features = [
     {
       icon: Brain,
-      title: "AI-Powered Classification",
+      title: "Classification",
       description:
         "Smart categorization and urgency detection using advanced NLP algorithms",
       color: "from-purple-500 to-pink-500",
@@ -126,7 +126,7 @@ const LandingPage = () => {
                   <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-8 py-4">
                     <span className="text-lg font-semibold text-white flex items-center justify-center space-x-2">
                       <Sparkles className="h-5 w-5 text-yellow-300" />
-                      <span>AI-Powered Civic Engagement Platform</span>
+                      <span>Civic Engagement Platform</span>
                       <Sparkles className="h-5 w-5 text-yellow-300" />
                     </span>
                   </div>

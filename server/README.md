@@ -1,8 +1,8 @@
 # CivicSense Backend API
 
-**AI-Powered Public Complaint Management Platform**
+**Public Complaint Management Platform**
 
-A complete Node.js + Express backend with MongoDB (Mongoose) for managing public complaints with AI-powered classification, urgency scoring, and authority routing.
+A complete Node.js + Express backend with MongoDB (Mongoose) for managing public complaints with classification, urgency scoring, and authority routing.
 
 ## 🚀 Features
 

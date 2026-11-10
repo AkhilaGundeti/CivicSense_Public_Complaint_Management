@@ -79,7 +79,7 @@ const HUGGINGFACE_API = {
   CLASSIFICATION_MODEL: "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli", // Reliable zero-shot model
 };
 
-// Classification candidate labels (simplified for AI-first approach)
+// Classification candidate labels (simplified for first approach)
 // AI models understand these simple labels well without verbose descriptions
 const CLASSIFICATION_LABELS = [
   "water issue",

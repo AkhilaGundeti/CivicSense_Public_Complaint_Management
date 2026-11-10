@@ -20,8 +20,8 @@ const LandingPage = () => {
   const features = [
     {
       icon: Zap,
-      title: 'AI-Powered Classification',
-      description: 'Automatic complaint categorization and urgency detection using advanced NLP.',
+      title: 'Classification',
+      description: 'complaint categorization and urgency detection using advanced NLP.',
     },
     {
       icon: BarChart3,
@@ -45,7 +45,7 @@ const LandingPage = () => {
     'Automatic authority routing',
     'Real-time status tracking',
     'Anonymous option available',
-    'AI-powered urgency detection',
+    'Urgency detection',
     'Multi-category support',
   ];
 
@@ -119,7 +119,7 @@ const LandingPage = () => {
             data-aos-delay="300"
           >
             <span className="text-[#ffffff] drop-shadow-md bg-clip-text">
-              AI-Powered Public Complaint Management
+              A Public Complaint Management
             </span>
           </p>
           
@@ -128,7 +128,7 @@ const LandingPage = () => {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            Submit, track, and resolve public complaints efficiently. Our AI-powered system
+            Submit, track, and resolve public complaints efficiently. Our system
             automatically routes your complaints to the right authority for faster resolution.
           </p>
           

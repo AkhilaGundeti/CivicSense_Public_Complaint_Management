@@ -1,5 +1,5 @@
 /*
-CivicSense – AI-Powered Public Complaint Management System
+CivicSense – Public Complaint Management System
 
 CivicSense is a full-stack MERN application designed to help citizens report public issues and automatically route those complaints to the correct government authorities using AI/NLP.
 
@@ -55,7 +55,7 @@ User Roles
 
 Project Goal
 
-To build an intelligent, scalable, AI-powered complaint management system that improves public service responsiveness, community engagement, and emergency handling in India.
+To build an intelligent, scalable, complaint management system that improves public service responsiveness, community engagement, and emergency handling in India.
 */
 
 require("dotenv").config();
@@ -122,7 +122,7 @@ app.use("/api/stats", statsRoutes);
 app.get("/api", (req, res) => {
   res.json({
     success: true,
-    message: "CivicSense API - AI-Powered Public Complaint Management Platform",
+    message: "CivicSense API - A Public Complaint Management Platform",
     version: "1.0.0",
     endpoints: {
       citizens: {

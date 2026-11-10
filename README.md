@@ -1,4 +1,4 @@
-# 🏛️ CivicSense - AI-Powered Public Complaint Management System
+# 🏛️ CivicSense - Public Complaint Management System
 
 <div align="center">
 
@@ -46,7 +46,6 @@ Traditional complaint management systems suffer from:
 ### Solution
 
 CivicSense addresses these challenges by:
-- **AI-Powered Classification**: Automatically categorizes complaints using zero-shot NLP models
 - **Intelligent Urgency Scoring**: Multi-factor urgency calculation based on sentiment, keywords, and trust scores
 - **Automatic Authority Assignment**: Routes complaints to the correct department (Water Board, IEB, RDA, etc.)
 - **Anonymous/Semi-Anonymous Support**: Secure identity handling with optional reveal mechanisms
@@ -137,7 +136,7 @@ CivicSense addresses these challenges by:
 
 ## 🚀 Special Features
 
-### 1. 🤖 AI-Powered NLP Pipeline
+### 1. 🤖 NLP Pipeline
 
 **Zero-Shot Classification**
 - Uses HuggingFace's `DeBERTa-v3-base-mnli-fever-anli` model
@@ -178,10 +177,6 @@ CivicSense addresses these challenges by:
 - Used for search and categorization
 - Improves complaint discoverability
 
-**Summary Generation**
-- AI-generated summaries for quick understanding
-- Helps authorities prioritize complaints
-- Reduces reading time
 
 ### 2. 🔐 Anonymous/Semi-Anonymous Handling (FR2)
 
@@ -1002,6 +997,6 @@ For support, email support@civicsense.gov or open an issue in the repository.
 
 **Built with ❤️ for better public service in India**
 
-[⬆ Back to Top](#-civicsense---ai-powered-public-complaint-management-system)
+[⬆ Back to Top](#-civicsense-public-complaint-management-system)
 
 </div>

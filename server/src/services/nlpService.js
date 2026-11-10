@@ -104,7 +104,7 @@ const processSentimentResult = (result) => {
 
 /**
  * Perform zero-shot classification using HuggingFace API
- * AI-only approach: No keyword fallback - returns error if AI can't detect category
+ * only approach: No keyword fallback - returns error if AI can't detect category
  */
 const classifyComplaint = async (text) => {
   try {

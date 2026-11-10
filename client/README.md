@@ -1,6 +1,6 @@
 # CivicSense Frontend
 
-**React Frontend for AI-Powered Public Complaint Management Platform**
+**React Frontend for Public Complaint Management Platform**
 
 A modern, responsive React application built with Vite, TailwindCSS, and React Router for managing public complaints.
 

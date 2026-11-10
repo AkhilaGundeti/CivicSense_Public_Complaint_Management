@@ -55,7 +55,7 @@ const AboutPage = () => {
             About CivicSense
           </h1>
           <p className="max-w-3xl mx-auto text-2xl leading-relaxed text-gray-700">
-            Empowering Indian citizens through AI-powered public complaint management and civic engagement
+            Empowering Indian citizens through public complaint management and civic engagement
           </p>
         </div>
 
@@ -158,7 +158,7 @@ const AboutPage = () => {
             <h2 className="mb-8 text-3xl font-bold text-center text-gray-800">Key Features</h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {[
-                { icon: Zap, text: "AI-powered complaint classification and urgency detection" },
+                { icon: Zap, text: "complaint classification and urgency detection" },
                 { icon: MapPin, text: "Automatic routing to appropriate authorities" },
                 { icon: BarChart3, text: "Support for multiple complaint categories" },
                 { icon: Shield, text: "Anonymous complaint submission option" },

@@ -96,7 +96,7 @@ const AboutPage = () => {
                   <p className="text-xl text-blue-100 leading-relaxed">
                     To create seamless, transparent, and efficient channels for civic engagement, 
                     empowering every citizen to contribute to community development through 
-                    innovative AI-powered solutions.
+                    innovative solutions.
                   </p>
                 </div>
               </div>

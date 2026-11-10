@@ -17,7 +17,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "description": "CivicSense - AI-Powered Public Complaint Management Platform",
+  "description": "CivicSense - A Public Complaint Management Platform",
   "dependencies": {
     "@huggingface/inference": "^4.13.3",
     "axios": "^1.6.2",

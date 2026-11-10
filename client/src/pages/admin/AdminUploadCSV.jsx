@@ -59,7 +59,7 @@ const AdminUploadCSV = () => {
             Bulk Complaint Upload
           </h1>
           <p className="max-w-3xl mx-auto text-2xl leading-relaxed text-gray-700">
-            Import multiple complaints efficiently using CSV files with AI-powered processing
+            Import multiple complaints efficiently using CSV files with processing
           </p>
         </div>
 
@@ -220,7 +220,7 @@ const AdminUploadCSV = () => {
                 <FileText className="w-20 h-20 mx-auto mb-4 text-gray-300" />
                 <h3 className="mb-2 text-xl font-bold text-gray-800">No Results Yet</h3>
                 <p className="max-w-sm mx-auto text-gray-600">
-                  Upload a CSV file to see AI-powered processing results and analytics
+                  Upload a CSV file to see processing results and analytics
                 </p>
               </div>
             )}
